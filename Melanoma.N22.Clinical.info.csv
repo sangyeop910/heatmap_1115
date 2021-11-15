@@ -1,0 +1,23 @@
+Patient.ID,irRECIST,Study.site,Gender,Age,Disease.Status,Overall.Survival,Vital.Status,Previous.MAPKi,Anatomical.Location,BRAF,NRAS,NF1,Treatment,Biopsy.Time,WES,RNAseq,SRA.Run.ID..tumor.WES,SRA.Run.ID..normal.WES,AccessionID..WES,SRA.Run.ID..tumor.RNA,Accession.ID..RNAseq,Response
+Pt1,Progressive Disease,UCLA,Female,66,M1b,607,Dead,N,"L post. Thigh, inf., SC",-,Q61L,,Pembrolizumab,pre-treatment,1,1,SRR3083866,SRR3083867,SRP067938+,SRR3184279,GSE78220,Non-Response
+Pt2,Partial Response,UCLA,Male,55,M1c,927,Alive,N,Lung,-,-,"Frame_Shift_Ins H31fs, Splice_Site",Pembrolizumab,pre-treatment,1,1,SRR3083839,SRR3083840,SRP067938+,SRR3184280,GSE78220,Response
+Pt4,Partial Response,UCLA,Male,62,M1c,948,Alive,Y,Adrenal,L331F,-,S2597*,Pembrolizumab,pre-treatment,1,1,SRR3083837,SRR3083838,SRP067938+,SRR3184281,GSE78220,Response
+Pt5,Partial Response,UCLA,Male,61,M1c,439,Alive,N,"L Chestwall, SC",V600E,-,-,Pembrolizumab,pre-treatment,1,1,SRR3083857,SRR3083858,SRP067938+,SRR3184282,GSE78220,Response
+Pt6,Partial Response,UCLA,Male,51,M1c,882,Alive,Y,"L forearm, SC",V600E,-,-,Pembrolizumab,pre-treatment,1,1,SRR3083863,SRR3083864,SRP067938+,SRR3184283,GSE78220,Response
+Pt7,Progressive Disease,UCLA,Female,55,M1c,662,Dead,N,"Crown/scalp, SC",,-,-,Pembrolizumab,pre-treatment,1,1,SRR3083870,SRR3083871,SRP067938+,SRR3184284,GSE78220,Non-Response
+Pt8,Complete Response,UCLA,Male,69,M1a,NA,Alive,N,"R leg, SC",V600R,-,-,Pembrolizumab,pre-treatment,1,1,SRR4289715,SRR4289714,SRP090294,SRR3184285,GSE78220,Response
+Pt9,Complete Response,UCLA,Male,68,M0,1054,Alive,N,"L forearm, SC",V600K,-,-,Pembrolizumab,pre-treatment,1,1,SRR3083849,SRR3083850,SRP067938+,SRR3184286,GSE78220,Response
+Pt10,Progressive Disease,UCLA,Male,60,M1a,387,Alive,Y,"Neck, SC",,-,-,Pembrolizumab,pre-treatment,1,1,SRR4289717,SRR4289716,SRP090294,SRR3184287,GSE78220,Non-Response
+Pt12,Progressive Disease,UCLA,Male,59,M1c,327,Dead,N,"L lower abdomen, SC",V600E,-,-,Pembrolizumab,pre-treatment,1,1,SRR3083882,SRR3083883,SRP067938+,SRR3184288,GSE78220,Non-Response
+Pt13,Complete Response,UCLA,Female,53,M1c,917,Alive,N,"Lower back, SC",,-,-,Pembrolizumab,pre-treatment,1,1,SRR3083855,SRR3083856,SRP067938+,SRR3184289,GSE78220,Response
+Pt14,Progressive Disease,UCLA,Female,27,M1c,54,Alive,N,"R neck, SC",V600E,-,R2349C,Pembrolizumab,pre-treatment,1,1,SRR3083868,SRR3083869,SRP067938+,SRR3184290,GSE78220,Non-Response
+Pt15,Partial Response,UCLA,Male,70,M1b,980,Dead,Y,"R clavicle, LN",-,G13D,Q1255*,Pembrolizumab,pre-treatment,1,1,SRR3083845,SRR3083846,SRP067938+,SRR3184291,GSE78220,Response
+Pt19,Partial Response,UCLA,Male,45,M1c,1060,Alive,N,"Chest, SC",-,Q61K,-,Pembrolizumab,pre-treatment,1,1,SRR3083847,SRR3083848,SRP067938+,SRR3184293,GSE78220,Response
+Pt20,Progressive Disease,UCLA,Female,63,M1c,337,Dead,N,L clavicle,-,Q61R,K615K Splice Site,Pembrolizumab,pre-treatment,1,1,SRR3083872,SRR3083873,SRP067938+,SRR3184294,GSE78220,Non-Response
+Pt22,Progressive Disease,UCLA,Male,55,M1c,182,Dead,N,"Left Flank, SC",V600E,-,-,Pembrolizumab,pre-treatment,1,1,SRR3083878,SRR3083879,SRP067938+,SRR3184295,GSE78220,Non-Response
+Pt23,Progressive Disease,UCLA,Male,63,M1c,103,Dead,Y,"Left Leg, SC",V600K,-,-,Pembrolizumab,pre-treatment,1,1,SRR3083874,SRR3083875,SRP067938+,SRR3184296,GSE78220,Non-Response
+Pt25,Progressive Disease,UCLA,Male,74,M1c,262,Dead,Y,L Outer Inguinal,-,-,-,Pembrolizumab,pre-treatment,1,1,SRR3083880,SRR3083881,SRP067938+,SRR3184297,GSE78220,Non-Response
+Pt27A,Complete Response,UCLA,Male,83,M1c,548,Alive,N,R upper arm,-,T50I,-,Pembrolizumab,pre-treatment,1,1,SRR4289725,SRR4289724,SRP090294,SRR3184298,GSE78220,Response
+Pt27B,Complete Response,UCLA,Male,83,M1c,548,Alive,N,R upper back,-,T50I,-,Pembrolizumab,pre-treatment,1^,1,SRR4289726,,SRP090294,SRR3184299,GSE78220,Response
+Pt28,Partial Response,UCLA,Male,82,M1c,439,Dead,N,"Scalp, SC",-,-,R1653C,Pembrolizumab,pre-treatment,1,1,SRR3083851,SRR3083852,SRP067938+,SRR3184300,GSE78220,Response
+Pt29,Progressive Disease,UCLA,Male,84,M1c,269,Dead,Y,Lung,-,-,-,Pembrolizumab,pre-treatment,1,1,SRR3083876,SRR3083877,SRP067938+,SRR3184301,GSE78220,Non-Response

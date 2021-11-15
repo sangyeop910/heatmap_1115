@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ko" id="no-fouc" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<th:block th:insert="fragments/head"></th:block>
+	<style>
+		
+		.heatmap_area {
+			position: relative;
+			
+		}
+		
+		#heatmap_legend {
+			position: absolute;
+			top:0px;
+			right:0px;
+			margin:15px;
+		}
+		
+		#heatmap_legend svg {
+			display: block;
+		}
+	
+	</style>
+</head>
+
+<body>
+	<!--header {-->
+	<th:block th:insert="fragments/snb_menu :: snb('heatmap')"></th:block>
+	<!--} header-->
+
+	<!--contents {-->
+	<div id="project_list_05" class="sub">
+		<div class="wrapper wide">
+			<div class="project_all icol-2">
+				<div class="project_left">
+					<ul class="project_sub">
+						<li class="pro_head">
+							<p>project</p>
+						</li>
+						<li class="pro_body">
+							<p>Korean female never-smoker lung <br>
+								caner vs. control data</p>
+						</li>
+					</ul>
+					<ul class="project_set">
+						<li class="pro_head">
+							<p>Genes for analysis</p>
+						</li>
+						<li class="pro_body">
+							<div class="pro_option">
+								<p><span class="font700">All genes</span> <span class="color">(32,526 genes)</span></p> 
+							</div>
+							<div id="pro_option_list">
+								<div class="pro_option">
+									<p>Tum vs. Nor <span class="color">(79 genes)</span></p> <i class="del_icon"><img th:src="@{/images/del_icon.png}" alt=""></i>
+								</div>
+								<div class="pro_option"><p>Adj vs. Nor <span class="color">(88 genes)</span></p> <i class="del_icon"><img th:src="@{/images/del_icon.png}" alt=""></i></div>
+								<div class="pro_option"><p>Tum vs. Adj <span class="color">(45 genes)</span></p> <i class="del_icon"><img th:src="@{/images/del_icon.png}" alt=""></i></div>
+							</div>
+							<div class="pro_option plus_btn_area"><p class="plus_btn"></p></div>
+							<div class="pro_option"><p class="btn btn_01">Gene set management</p></div>
+							<div class="pro_option"><p class="btn btn_02">Set operator</p></div>
+						</li>
+					</ul>
+				</div><!-- project_left -->
+
+				<div class="project_right">
+					<div class="box_plot_st_wr heatmap_st_wr">
+						<div class="box_plot">
+							<div class="plot_tit icol-2"><span>Heatmap</span>
+								<div class="icon_wr icon_wr3">
+									<ul class="icol-3 ">
+										<li>
+											<img th:src="@{/images/plot_icon_02.png}" alt="">
+										</li>
+										<li>
+											<img th:src="@{/images/download_ic.png}" alt="">
+										</li>
+										<li>
+											<img th:src="@{/images/w_select.png}" alt="">
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="heatmap_area">
+								<div id="group_color"></div>
+								<div id="heatmap">
+								<div id="Graph"></div>
+								
+								</div>
+								<div id="heatmap_legend"></div>
+							</div>
+						</div>
+					</div>
+				</div><!-- project_right -->
+				
+			</div><!-- project_all -->
+			<!-- pop01  -->
+			<div class="pro_li_plot_pop pop01" style="display: none;">
+				<div class="pop_title">
+					<p>Configure</p>
+				</div>
+				<div class="pop_con">
+					<div class="pop_sec icol-2 sec_dev">
+						<p class="pop_sub_title">x-axis
+						</p>
+						<div class="input_wr gray_box">
+							<input type="text">
+						</div>
+					</div>
+					<div class="pop_sec icol-2 sec_dev">
+						<p class="pop_sub_title">y-axis
+						</p>
+						<div class="input_wr gray_box">
+							<input type="text">
+						</div>
+					</div>
+					<div class="pop_sec">
+						<p class="pop_sub_title">Select range of gene expression</p>
+						 <div class="icol-2">
+							 <div class="data_box_wr">from <select class="data_box pur"> <option value=""> -2</option></select></div>
+							 <div class="data_box_wr">or <select class="data_box red"> <option value=""> 2</option></select></div>
+						 </div>
+					</div>
+					<div class="pop_sec">
+						<p class="pop_sub_title">Select comparison groups</p>
+						<div class="btn_wr icol-3">
+							<div class="project_set  pro_option" value="progressive">
+								<p class="btn btn03 r_btn bt_gray">Progressive Disease</p>
+							</div>
+							<div class="project_set  pro_option" value="partial">
+								<p class="btn btn03 r_btn bt_green">Partial response</p>
+							</div>
+							<div class="project_set  pro_option" value="complete">
+								<p class="btn btn03 r_btn bt_yell ">Complete response</p>
+							</div>
+						</div>
+					</div>
+					<div class="pop_sec">
+						<p class="pop_sub_title">Clustering methods</p>
+						<div class="icol-2 sec_dev">
+							<p class="pop_sub_title">Row</p>
+							<div class="input_wr gray_box">
+								<input type="text">
+							</div>
+						</div>
+						<div class="icol-2 sec_dev">
+							<p class="pop_sub_title">Column</p>
+							<div class="input_wr gray_box">
+								<input type="text">
+							</div>
+						</div>
+					</div>
+					<div class="pop_sec open01 ">
+						<p class="pop_txt">Show detail clustering option</p>
+						<div class="project_wlist_more_btnbox">
+							<button type="button" class="project_wlist_more_btn"><img src="/rdap/images/arrow_pop.png" alt=""></button>
+						</div>
+					</div>
+					<div class="project_set  pro_option"><p class="btn btn_02">Apply</p></div>
+				</div>
+			</div>
+			<!-- pop02  -->
+			<div class="pro_li_plot_pop pop02">
+				<div class="pop_title">
+					<p>Set operator</p>
+				</div>
+				<div class="pop_con">
+					<div class="pop_sec">
+						<p class="pop_sub_title">Set A</p>
+						<div class="input_wr gray_box">
+							<input type="text">
+						</div>
+					</div>
+					<div class="pop_sec">
+						<div class="chk_box_wr  chk_block">
+							<label for="SetA_t1">
+								<input type="radio" id="SetA_t1" name="SetA_tp" value="SetA" checked >Set A ∪ Set B	</label>
+							<label for="SetA_t2">
+								<input type="radio" id="SetA_t2" name="SetA_tp" value="SetA" >Set A ∩ Set B							</label>
+							<label for="SetA_t3">
+								<input type="radio" id="SetA_t3" name="SetA_tp" value="SetA" >Set A – Set B							</label>
+							<label for="SetA_t4">
+								<input type="radio" id="SetA_t4" name="SetA_tp" value="SetA" >Set B – Set A							</label>
+	
+						</div>
+					</div>
+					<div class="pop_sec">
+						<div class="sel_wr">
+							<p class="pop_sub_title">Select plot type</p>
+							<select name="" id=""  class="i-select">
+								<option value="">Box plot</option>
+							</select>
+						</div>
+					</div>
+					<div class="pop_sec icol-2 sec_dev">
+						<p class="pop_sub_title">y-axis
+						</p>
+						<div class="input_wr gray_box">
+							<input type="text">
+						</div>
+					</div>
+					<div class="pop_sec icol-2 sec_dev">
+						<p class="pop_sub_title">y-axis
+						</p>
+						<div class="sel_wr">	
+							<select name="" id=""  class="i-select">
+								<option value="">Enter a gene symbol</option>
+							</select>
+						</div>
+					</div>
+					<div class="">
+						<p class="pop_sub_title">Select comparison groups</p>
+						<div class="btn_wr icol-3">
+							<div class="project_set  pro_option"><p class="btn btn03 r_btn bt_gray">Progressive
+								Disease
+								</p></div>
+							<div class="project_set  pro_option"><p class="btn btn03 r_btn bt_green">Partial
+								response
+								</p></div>
+							<div class="project_set  pro_option"><p class="btn btn03 r_btn bt_yell ">Complete
+								response</p></div>
+						</div>
+					</div>
+					
+					
+				</div>
+			</div>
+			<!-- pop03  -->
+			<div class="pro_li_plot_pop pop03">
+				<div class="pop_title">
+					<p>TITLE</p>
+				</div>
+				<div class="pop_con">
+					<div class="pop_sec">
+						<p class="pop_sub_title">Select range of gene expression</p>
+						 <div class="icol-2">
+							 <div class="data_box_wr">from <select class="data_box pur"> <option value=""> -2</option></select></div>
+							 <div class="data_box_wr">or <select class="data_box red"> <option value=""> 2</option></select></div>
+						 </div>
+					</div>
+					
+					<div class="pop_sec">
+						<div class="sel_wr ">
+							<p class="pop_sub_title">Sort by</p>
+							<select name="" id=""  class="i-select">
+								<option value="">Decreasing order
+								</option>
+							</select>
+						</div>
+					</div>
+					<div class="pop_sec pop03_02">
+						<div class="sel_wr icol-2">
+							<p class="pop_sub_title">Display</p>
+							<div class="count_btn_wr icol-4">
+								<span class="cir_icon mi_icon"></span>
+								<input type="text" name="" class="count_data" value="0">
+								<span class="cir_icon plus_icon"></span>
+								<span class="cout_end_txt">lines</span>
+							</div>
+						</div>
+					</div>
+					<div class="pop_sec">
+						<p class="pop_sub_title">Select statistical significance
+						</p>
+						<div class="chk_box_wr  chk_block">
+							<label for="pop03_op1">
+								<input type="radio" id="pop03_op1" name="pop03" checked  value="" >P-value</label>
+							<label for="pop03_op2">
+								<input type="radio" id="pop03_op2" name="pop03" value="" >FDR</label>
+						</div>
+					</div>
+					
+					<div class="gage_wr">
+						<ul>
+							<li class="gage_sec icol-2">
+								<span class="gage_title">P-value</span>
+								<div class="gage_bar">
+									<ul class="icol-4  ">
+										<li class="active">
+										</li>
+										<li>
+										</li>
+										<li>
+										</li>
+										<li>
+										</li>
+									</ul>
+								</div>
+								<ul class="icol-4 num ">
+									<li>
+										<span>0.05</span>
+									</li>
+									<li>
+										<span>0.01</span>
+									</li>
+									<li>
+										<span>0.001</span>
+									</li>
+								</ul>
+							</li>
+							<li class="gage_sec icol-2">
+								<span class="gage_title">| Log2 FC |</span> 
+								<div class="gage_bar">
+									<ul class="icol-4">
+										<li class="active">
+										</li>
+										<li class="active">
+										</li>
+										<li class="active">
+										</li>
+										<li>
+										</li>
+									</ul>
+								</div>
+								<ul class="icol-4 num">
+									<li >
+										<span>1</span>
+									</li>
+									<li >
+										<span>2</span>
+									</li>
+									<li>
+										<span>3</span>
+									</li>
+								</ul>
+							</li>
+							<li class="gage_sec icol-2">
+								<span class="gage_title">Log2 CPM
+								</span>
+								<div class="gage_bar">
+									<ul class="icol-4">
+										<li class="active">
+										</li>
+										<li class="active">
+										</li>
+										<li>
+										</li>
+										<li>
+										</li>
+									</ul>
+								</div>
+								<ul class="icol-4 num">
+									<li>
+										<span>0</span>
+									</li>
+									<li>
+										<span>1</span>
+									</li>
+									<li>
+										<span>2</span>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					
+					
+				</div>
+			</div>
+			<!-- pop04  -->
+			<div class="pro_li_plot_pop pop04">
+				<div class="pop_title">
+					<p>TITLE</p>
+				</div>
+				<div class="pop_con">
+					<div class="pop_sec">
+						<p class="pop_sub_title">Select statistical significance</p>
+						<div class="chk_box_wr  chk_block">
+							<label for="pop04_op1">
+								<input type="radio" id="pop04_op1" name="pop04" checked  value="" >P-value <P class="sub_txt">(indicate functional & physical<br>
+									associations)</P></label>
+							<label for="pop04_op2">
+								<input type="radio" id="pop04_op2" name="pop04" value="" >FDR
+								<P class="sub_txt">(indicate physical associations)</P></label>
+						</div>
+					</div>
+				
+					<div class="pop_sec">
+						<div class="sel_wr ">
+							<p class="pop_sub_title">Minimum required interaction score<p>
+								<div class="cont_box_st02"><p>Medium confidence (0.400)</p> 
+	
+								</div>
+						</div>
+					</div>
+					<div class="pop_sec open01 ">
+						<p class="pop_txt">Show advanced setting options
+						</p>
+						<div class="project_wlist_more_btnbox">
+							<button type="button" class="project_wlist_more_btn"><img th:src="@{/images/arrow_pop.png}" alt=""></button>
+						</div>
+					</div>
+				
+				</div>
+				<div class="pop_sec no_wrappers open02">
+					<p class="pop_txt ">Show advanced setting options
+					</p>
+					<div class="chk_box_wr cont_box_st03 ">
+						<p class="pop_sub_title">Max number of interactors to show
+						</p>
+						<div class="cont_box_st03txt_wr">
+							<p>1st shell: no more than<span class="cont_box_st03_num_wr"><i class="mi_icon">-</i><input type="text" name="" class="count_data" value="0"><i class="plus_icon">+</i></span>interactions</p>
+						</div>
+					</div>
+					<div class="project_wlist_more_btnbox">
+						<button type="button" class="project_wlist_more_btn"><img th:src="@{/images/arrow_pop.png}" alt=""></button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--} contents-->
+
+	<!--footer {-->
+	<th:block th:insert="fragments/footer"></th:block>
+	<!--} footer-->
+	<script th:inline="javascript" th:src="@{/js/heatmap/d3.v7.min.js}"></script>
+	<script th:inline="javascript" th:src="@{/js/heatmap/d3-legend.min.js}"></script>
+	<script th:inline="javascript" th:src="@{/js/heatmap/dist/unipept-visualizations.js}"></script>
+	<script th:inline="javascript" th:src="@{/js/heatmap/heatmap.js}"></script>
+</body>
+
+</html>
